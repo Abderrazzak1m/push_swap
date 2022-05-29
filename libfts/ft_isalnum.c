@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiski <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 09:49:15 by amiski            #+#    #+#             */
-/*   Updated: 2021/11/08 09:50:04 by amiski           ###   ########.fr       */
+/*   Created: 2021/11/03 16:39:27 by amiski            #+#    #+#             */
+/*   Updated: 2021/11/03 16:47:52 by amiski           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"push_swap.h"
 
-char	*ft_strdup(char *src)
+int	ft_isalnum(int c)
 {
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = malloc(ft_strlen(src) + 1);
-	if (str == NULL)
-		return (0);
-	while (src[i])
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
-		str[i] = src[i];
-		i ++;
+		return (1);
 	}
-	str[i] = '\0';
-	return (str);
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	return (0);
 }
